@@ -1,0 +1,37 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th class="text-center"><AddTootajaComponent/></th>
+  </tr>
+  <tr>
+    <th>Nimi</th>
+    <th>Email</th>
+    <th>Telefon</th>
+    <th>Elukoht</th>
+    <th>Muudetud</th>
+    <th>Lisatud</th>
+    <th class="text-center">Muuda</th>
+  </tr>
+  </thead>
+  <tbody>
+  @for (tootaja of apiService.tootajad; track tootaja.id) {
+    <tr>
+      <td>{{tootaja.nimi}}</td>
+      <td>{{tootaja.email}}</td>
+      <td>{{tootaja.telefon}}</td>
+      <td>{{tootaja.elukoht}}</td>
+      <td>{{tootaja.muudetud | date:'dd/MM/yyyy, HH:mm'}}</td>
+      <td>{{tootaja.lisatud | date:'dd/MM/yyyy, HH:mm'}}</td>
+      <td class="text-center"><button class="btn btn-light btn-circular" data-bs-toggle="modal" data-bs-target="#editTootajaModal" (click)="selectTootaja(tootaja)"><i class="bi bi-pencil-fill"></i></button></td>
+    </tr>
+  }
+  </tbody>
+</table>
+<PaginationComponent/>
+<EditTootajaComponent [tootaja]="selectedTootaja"/>

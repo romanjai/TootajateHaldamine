@@ -1,0 +1,36 @@
+<div>
+  <div class="modal" tabindex="-1" id="editTootajaModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Muuda töötaja andmeid</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="tootajaForm">
+            <div class="input-group mb-3">
+              <span class="input-group-text w-input-label">Nimi</span>
+              <input type="text" class="form-control" formControlName="nimi" [ngClass]="{'is-invalid' : tootajaForm.get('nimi')?.invalid}">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text w-input-label">Email</span>
+              <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid' : tootajaForm.get('email')?.invalid}">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text w-input-label">Telefon</span>
+              <input type="text" class="form-control" formControlName="telefon" [ngClass]="{'is-invalid' : tootajaForm.get('telefon')?.invalid}">
+            </div>
+            <div class="input-group">
+              <span class="input-group-text w-input-label">Elukoht</span>
+              <input type="text" class="form-control" formControlName="elukoht" [ngClass]="{'is-invalid' : tootajaForm.get('elukoht')?.invalid}">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="delete()">Kustuta</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="tootajaForm.invalid" (click)="submit()">Muuda</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

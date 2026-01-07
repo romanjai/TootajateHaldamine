@@ -1,0 +1,15 @@
+.btn-circular {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  text-align: center;
+}
+
+.btn-circular i {
+  font-size: 1.4rem;
+}
+
+.w-input-label {
+  width: 80px;
+}

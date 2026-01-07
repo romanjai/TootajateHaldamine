@@ -1,0 +1,43 @@
+<nav class="d-flex justify-content-end">
+  <ul class="pagination me-2">
+
+    <li class="page-item" [class.disabled]="this.apiService.first">
+      <a class="page-link" (click)="changePage(0, this.apiService.pageSize)">
+        <span>&laquo;</span>
+      </a>
+    </li>
+
+    <li class="page-item" [class.disabled]="this.apiService.first">
+      <a class="page-link" (click)="changePage(this.apiService.currentPage - 1, this.apiService.pageSize)">
+        <span>&lsaquo;</span>
+      </a>
+    </li>
+
+    @for (i of getVisiblePageNumbers(); track $index) {
+      <li class="page-item"><a class="page-link" [class.active]="this.apiService.currentPage === i - 1" (click)="changePage(i - 1, this.apiService.pageSize)">{{ i }}</a></li>
+    }
+
+    <li class="page-item" [class.disabled]="this.apiService.last">
+      <a class="page-link" (click)="changePage(this.apiService.currentPage + 1, this.apiService.pageSize)">
+        <span>&rsaquo;</span>
+      </a>
+    </li>
+
+    <li class="page-item" [class.disabled]="this.apiService.last">
+      <a class="page-link" (click)="changePage(this.apiService.totalPages - 1, this.apiService.pageSize)">
+        <span>&raquo;</span>
+      </a>
+    </li>
+
+  </ul>
+  <div class="dropdown">
+    <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+      {{this.apiService.pageSize}}
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" (click)="changePage(this.apiService.currentPage, 10)">10</a></li>
+      <li><a class="dropdown-item" (click)="changePage(this.apiService.currentPage, 25)">25</a></li>
+      <li><a class="dropdown-item" (click)="changePage(this.apiService.currentPage, 50)">50</a></li>
+    </ul>
+  </div>
+</nav>

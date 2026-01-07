@@ -1,0 +1,36 @@
+<div>
+  <button class="btn btn-primary btn-circular" data-bs-toggle="modal" data-bs-target="#addTootajaModal"><i class="bi bi-plus"></i></button>
+  <div class="modal" tabindex="-1" id="addTootajaModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Lisa uus töötaja</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="tootajaForm">
+          <div class="input-group mb-3">
+            <span class="input-group-text w-input-label">Nimi</span>
+            <input type="text" class="form-control" formControlName="nimi" [ngClass]="{'is-invalid' : tootajaForm.get('nimi')?.invalid && tootajaForm.get('nimi')?.touched}">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text w-input-label">Email</span>
+            <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid' : tootajaForm.get('email')?.invalid && tootajaForm.get('email')?.touched}">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text w-input-label">Telefon</span>
+            <input type="text" class="form-control" formControlName="telefon" [ngClass]="{'is-invalid' : tootajaForm.get('telefon')?.invalid && tootajaForm.get('telefon')?.touched}">
+          </div>
+          <div class="input-group">
+            <span class="input-group-text w-input-label">Elukoht</span>
+            <input type="text" class="form-control" formControlName="elukoht" [ngClass]="{'is-invalid' : tootajaForm.get('elukoht')?.invalid && tootajaForm.get('elukoht')?.touched}">
+          </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="tootajaForm.invalid" (click)="submit()">Lisa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

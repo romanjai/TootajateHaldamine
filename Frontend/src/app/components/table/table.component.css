@@ -1,0 +1,11 @@
+.btn-circular {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  text-align: center;
+}
+
+td {
+  vertical-align: middle;
+}
