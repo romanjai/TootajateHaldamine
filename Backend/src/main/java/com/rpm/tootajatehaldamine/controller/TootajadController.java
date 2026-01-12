@@ -2,7 +2,7 @@ package com.rpm.tootajatehaldamine.controller;
 
 import com.rpm.tootajatehaldamine.model.TootajaRequest;
 import com.rpm.tootajatehaldamine.model.TootajaResponse;
-import com.rpm.tootajatehaldamine.service.DatabaseService;;
+import com.rpm.tootajatehaldamine.service.DatabaseService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
