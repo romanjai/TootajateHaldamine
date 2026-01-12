@@ -1,4 +1,4 @@
-# Töötajate haldamine proovitöö
+# Töötajate haldamine
 Arendada lihtne töötajate haldamise süsteem, nii backend (Java 21, Spring Boot, Maven) kui ka frontend (Angular).
 Läbi frontendi peab olema võimalik kasutajal vaadata töötajate nimekirja ning lisada,muuta ja kustutada töötajaid.
 ***
