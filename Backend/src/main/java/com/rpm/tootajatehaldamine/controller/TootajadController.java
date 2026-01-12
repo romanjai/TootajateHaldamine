@@ -37,9 +37,9 @@ public class TootajadController {
         return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping("/deleteTootaja/{id}")
-    public ResponseEntity<Void> deleteTootaja(@PathVariable Long id) {
+    @PostMapping("/deleteTootaja")
+    public ResponseEntity<Void> deleteTootaja(@RequestBody Long id) {
         databaseService.deleteTootaja(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().build();
     }
 }
